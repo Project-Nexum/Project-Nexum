@@ -31,6 +31,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     //Universal image loader
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    //Design Support library dependency
+    compile 'com.android.support:design:26.+'
 }
 
 
