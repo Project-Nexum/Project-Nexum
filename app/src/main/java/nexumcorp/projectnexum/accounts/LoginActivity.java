@@ -107,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        UniversalImageLoader.setImage("assets://money_icon.png", mLogo);
+        UniversalImageLoader.setImage("assets://Nexum.png", mLogo);
 
         hideSoftKeyboard();
     }
