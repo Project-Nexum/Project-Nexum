@@ -3,6 +3,7 @@ package nexumcorp.projectnexum;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,18 @@ import android.view.ViewGroup;
 
 public class viewpost extends Fragment {
     private static final String TAG= "ViewPost";
+
+
+    //vars
+    private String mPostId;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPostId=(String)getArguments().get(getString(R.string.arg_post_id));
+        Log.d(TAG,"onCreate: got the post id "+ mPostId);
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

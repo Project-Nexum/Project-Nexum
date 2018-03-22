@@ -16,7 +16,7 @@
     <string name="fragment_search">Search</string>
     <string name="fragment_post">Post</string>
     <string name="fragment_view">View Tradesmen</string>
-    <string name="fragment_favourites">Favourites</string>
+    <string name="fragment_favourites">Favourite</string>
     <string name="fragment_maps">Maps</string>
     <string name="fragment_view_post">Post</string>
     <string name="fragment_account">Account</string>
