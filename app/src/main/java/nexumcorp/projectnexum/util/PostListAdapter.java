@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import nexumcorp.projectnexum.MainActivity;
 import nexumcorp.projectnexum.R;
+import nexumcorp.projectnexum.favourites;
 import nexumcorp.projectnexum.models.Post;
 import nexumcorp.projectnexum.search;
 
@@ -81,6 +82,12 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.ViewHo
                     //favourite fragment
                     else if(fragment.getTag().equals("android:switcher:"+R.id.viewpager_container+":1")){
                         Log.d(TAG,"onClick: Switching to: " + mContext.getString(R.string.fragment_favourites));
+
+                        favourites favourites= (favourites) ((MainActivity)mContext).getSupportFragmentManager()
+                                .findFragmentByTag("android:switcher:"+R.id.viewpager_container+":" +
+                                        ((MainActivity)mContext).mViewPager.getCurrentItem());
+
+                        favourites.viewPost(mPosts.get(position).getPost_id());
                     }
                 }
             }
