@@ -18,5 +18,5 @@ public class add_business extends Fragment {
         View view =inflater.inflate(R.layout.add_business,container,false);
         return view;
     }
-    
+
 }

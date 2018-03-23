@@ -11,6 +11,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import nexumcorp.projectnexum.util.SectionsPagerAdapter;
 
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private static final int REQUEST_CODE = 1;
+    private ImageView mBackArrow;
 
     //widgets
     private TabLayout mTabLayout;
@@ -32,25 +35,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mTabLayout = (TabLayout) findViewById(R.id.tabs);
-        mViewPager  = (ViewPager) findViewById(R.id.viewpager_container);
+        mViewPager  = (ViewPager) findViewById(R.id.viewpager_container1);
+        mBackArrow = (ImageView) findViewById(R.id.backArrow);
 
         verifyPermissions();
+        init();
     }
 
     private void setupViewPager(){
         mPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mPagerAdapter.addFragment(new search());
-        mPagerAdapter.addFragment(new favourites());
-        mPagerAdapter.addFragment(new post());
-        mPagerAdapter.addFragment(new account());
 
         mViewPager.setAdapter(mPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.getTabAt(0).setText(getString(R.string.fragment_search));
-        mTabLayout.getTabAt(1).setText(getString(R.string.fragment_favourites));
-        mTabLayout.getTabAt(2).setText(getString(R.string.fragment_post));
-        mTabLayout.getTabAt(3).setText(getString(R.string.fragment_account));
 
+    }
+    private void init(){
+        mBackArrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: navigating back.");
+                finish();
+            }
+        });
     }
 
     private void verifyPermissions(){

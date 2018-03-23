@@ -31,7 +31,7 @@ import nexumcorp.projectnexum.util.RecyclerViewMargin;
  */
 
 public class favourites extends Fragment {
-    private static final String TAG = "WatchListFragment";
+    private static final String TAG = "favourites";
     private static final int NUM_GRID_COLUMNS = 3;
     private static final int GRID_ITEM_MARGIN = 5;
 
@@ -152,7 +152,7 @@ public class favourites extends Fragment {
         args.putString(getString(R.string.arg_post_id),postid);
         fragment.setArguments(args);
 
-        transaction.replace(R.id.container,fragment,getString(R.string.fragment_view_post));
+        transaction.replace(R.id.watch_list_container,fragment,getString(R.string.fragment_view_post));
         transaction.addToBackStack(getString(R.string.fragment_view_post));
         transaction.commit();
 

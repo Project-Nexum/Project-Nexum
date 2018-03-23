@@ -36,7 +36,7 @@ public class account extends Fragment {
             public void onClick(View view) {
                 add_business business = new add_business();
                 FragmentManager manager = myContext.getSupportFragmentManager();
-                manager.beginTransaction().replace(R.id.add, business).commit();
+                manager.beginTransaction().replace(R.id.viewpager_container, business).commit();
             }
         });
         return view;

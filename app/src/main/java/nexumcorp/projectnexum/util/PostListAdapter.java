@@ -66,25 +66,25 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.ViewHo
 
                 //view post in more detail
                 Fragment fragment= (Fragment)((MainActivity)mContext).getSupportFragmentManager()
-                        .findFragmentByTag("android:switcher:"+R.id.viewpager_container+":" +
+                        .findFragmentByTag("android:switcher:"+R.id.viewpager_container1+":" +
                                 ((MainActivity)mContext).mViewPager.getCurrentItem());
                 if(fragment != null){
                     //Search fragment
-                    if(fragment.getTag().equals("android:switcher:"+R.id.viewpager_container+":0")){
+                    if(fragment.getTag().equals("android:switcher:"+R.id.viewpager_container1+":0")){
                         Log.d(TAG,"onClick: Switching to: " + mContext.getString(R.string.fragment_view_post));
 
                         search search= (search) ((MainActivity)mContext).getSupportFragmentManager()
-                                .findFragmentByTag("android:switcher:"+R.id.viewpager_container+":" +
+                                .findFragmentByTag("android:switcher:"+R.id.viewpager_container1+":" +
                                         ((MainActivity)mContext).mViewPager.getCurrentItem());
 
                         search.viewPost(mPosts.get(position).getPost_id());
                     }
                     //favourite fragment
-                    else if(fragment.getTag().equals("android:switcher:"+R.id.viewpager_container+":1")){
+                    else if(fragment.getTag().equals("android:switcher:"+R.id.viewpager_container1+":1")){
                         Log.d(TAG,"onClick: Switching to: " + mContext.getString(R.string.fragment_favourites));
 
-                        favourites favourites= (favourites) ((MainActivity)mContext).getSupportFragmentManager()
-                                .findFragmentByTag("android:switcher:"+R.id.viewpager_container+":" +
+                        favourites favourites= (nexumcorp.projectnexum.favourites) ((MainActivity)mContext).getSupportFragmentManager()
+                                .findFragmentByTag("android:switcher:"+R.id.viewpager_container1+":" +
                                         ((MainActivity)mContext).mViewPager.getCurrentItem());
 
                         favourites.viewPost(mPosts.get(position).getPost_id());

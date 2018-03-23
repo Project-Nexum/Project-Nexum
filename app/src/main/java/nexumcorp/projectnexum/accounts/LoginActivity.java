@@ -24,6 +24,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import nexumcorp.projectnexum.MainActivity;
+import nexumcorp.projectnexum.NavActivity;
 import nexumcorp.projectnexum.R;
 import nexumcorp.projectnexum.util.UniversalImageLoader;
 
@@ -167,7 +168,7 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d(TAG, "onAuthStateChanged: signed_in: " + user.getUid());
                         Toast.makeText(LoginActivity.this, "Authenticated with: " + user.getEmail(), Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, NavActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                         finish();
